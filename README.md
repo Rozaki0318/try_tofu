@@ -15,11 +15,15 @@
 │   │   ├── provider.tf
 │   │   └── version.tf
 │   └── stg
+│       ├── backend.tf
+│       ├── main.tf
+│       ├── provider.tf
+│       └── version.tf
 └── modules
     └── vpc
         ├── main.tf
         ├── outputs.tf
         └── variable.tf
 
-5 directories, 8 files
+5 directories, 12 files
 ```
