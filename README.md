@@ -5,6 +5,15 @@
 1. terraformの最適なディレクトリ構造を探る
 1. GitHub Actionと連携させる
 
+
+# Assumptions
+
+1. 環境はdevとstg（あとでprd追加）
+1. AWSアカウントは環境ごとに分ける
+1. tfstateはAWSアカウントごとに分ける
+1. 間違ったプロファイルでtofu plan, applyできないように
+
+
 ```
 .
 ├── README.md
