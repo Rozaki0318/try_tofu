@@ -11,6 +11,11 @@ module "vpc" {
       az   = "ap-northeast-1c"
       name = "public"
       cidr = "192.168.2.0/24"
+    },
+    {
+      az   = "ap-northeast-1d"
+      name = "public"
+      cidr = "192.168.3.0/24"
     }
   ]
 }
