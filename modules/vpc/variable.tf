@@ -9,8 +9,11 @@ variable "cidr_block" {
   default     = "10.0.0.0/16"
 }
 
-variable "public_subnets" {
+variable "public_subnet" {
   description = "VPC SUBNET"
-  type        = list(map(any))
-  default     = []
+  type        = object({
+    az = string
+    name = string
+    cidr = string
+  })
 }

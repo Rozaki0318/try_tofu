@@ -1,15 +1,16 @@
 # Objectives
 
 1. OpenTofuを試す
-```
-OpenTofu v1.9.0
-on linux_amd64
-```
 1. modulesを体得する
 1. list, mapなどのデータ型、for_each, countなどの繰り返し処理を習得する
 1. terraformの最適なディレクトリ構造を探る
-1. GitHub Actionと連携させる
 
+# System Architecture
+
+1. 1VPC
+1. 1PublicSubnet
+1. 1ALB
+1. 1ECS pulling from ECR
 
 # Assumptions
 
@@ -19,25 +20,39 @@ on linux_amd64
 1. 間違ったプロファイルでtofu plan, applyできないように
 
 
+
+```
+OpenTofu v1.9.0
+on linux_amd64
+```
+
 ```
 .
 ├── README.md
 ├── envs
-│   ├── dev
-│   │   ├── backend.tf
-│   │   ├── main.tf
-│   │   ├── provider.tf
-│   │   └── version.tf
-│   └── stg
-│       ├── backend.tf
-│       ├── main.tf
-│       ├── provider.tf
-│       └── version.tf
+│   ├── dev
+│   │   ├── backend.tf
+│   │   ├── main.tf
+│   │   ├── provider.tf
+│   │   └── version.tf
+│   └── stg
+│       ├── backend.tf
+│       ├── main.tf
+│       ├── provider.tf
+│       └── version.tf
 └── modules
+    ├── alb
+    │   ├── main.tf
+    │   ├── outputs.tf
+    │   └── variable.tf
+    ├── ecs
+    │   ├── main.tf
+    │   ├── outputs.tf
+    │   └── variable.tf
     └── vpc
         ├── main.tf
         ├── outputs.tf
         └── variable.tf
 
-5 directories, 12 files
+7 directories, 18 files
 ```
