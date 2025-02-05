@@ -3,12 +3,12 @@ resource "aws_lb" "ecs_alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [var.alb_sg]
-  subnets           = [var.public_subnet]
+  subnets           = var.public_subnet
 }
 
 resource "aws_lb_target_group" "ecs_tg" {
   name     = "ecs-tg"
-  port     = 80
+  port     = 5000
   protocol = "HTTP"
   vpc_id   = var.vpc_id
   target_type = "ip"

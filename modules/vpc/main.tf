@@ -5,10 +5,20 @@ resource "aws_vpc" "main" {
   }
 }
 
-resource "aws_subnet" "public" {
+resource "aws_subnet" "public_1" {
   vpc_id                  = aws_vpc.main.id
-  availability_zone       = var.public_subnet.az
-  cidr_block              = var.public_subnet.cidr
+  availability_zone       = var.public_subnet_1.az
+  cidr_block              = var.public_subnet_1.cidr
+  map_public_ip_on_launch = true
+  tags = {
+    Name = "main-public"
+  }
+}
+
+resource "aws_subnet" "public_2" {
+  vpc_id                  = aws_vpc.main.id
+  availability_zone       = var.public_subnet_2.az
+  cidr_block              = var.public_subnet_2.cidr
   map_public_ip_on_launch = true
   tags = {
     Name = "main-public"

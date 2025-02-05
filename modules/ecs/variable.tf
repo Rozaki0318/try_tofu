@@ -15,5 +15,5 @@ variable "ecr_image" {
 
 variable "public_subnet" {
   description = "VPC SUBNET"
-  type        = string
+  type        = list(string)
 }

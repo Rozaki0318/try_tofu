@@ -5,7 +5,7 @@ variable "vpc_id" {
 
 variable "public_subnet" {
   description = "VPC SUBNET"
-  type        = string
+  type        = list(string)
 }
 
 variable "alb_sg" {
