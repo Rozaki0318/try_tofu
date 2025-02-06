@@ -20,6 +20,7 @@ module "ecs" {
   alb_sg               = aws_security_group.alb_sg.id
   alb_target_group_arn = module.alb.alb_target_group_arn
   ecr_image            = "986340587505.dkr.ecr.ap-northeast-1.amazonaws.com/my-python-app:latest"
+  desired_count        = 1
 }
 
 resource "aws_security_group" "alb_sg" {

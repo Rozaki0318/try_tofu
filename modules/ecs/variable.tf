@@ -13,6 +13,11 @@ variable "ecr_image" {
   type        = string
 }
 
+variable "desired_count" {
+  description = "Number of Tasks"
+  type        = number
+}
+
 variable "public_subnet" {
   description = "VPC SUBNET"
   type        = list(string)

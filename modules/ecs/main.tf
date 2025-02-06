@@ -31,6 +31,7 @@ resource "aws_ecs_service" "my_service" {
   name            = "my-service"
   cluster         = aws_ecs_cluster.my_cluster.id
   task_definition = aws_ecs_task_definition.my_task.arn
+  desired_count   = var.desired_count
   launch_type     = "FARGATE"
 
   network_configuration {
